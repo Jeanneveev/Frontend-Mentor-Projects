@@ -1,0 +1,214 @@
+.attribution {
+    font-size: 11px; text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+.poppins-extralight {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+  
+
+/* - Red: hsl(0, 78%, 62%)
+- Cyan: hsl(180, 62%, 55%)
+- Orange: hsl(34, 97%, 64%)
+- Blue: hsl(212, 86%, 64%)
+
+### Neutral
+
+- Very Dark Blue: hsl(234, 12%, 34%)
+- Grayish Blue: hsl(229, 6%, 66%)
+- Very Light Gray: hsl(0, 0%, 98%) */
+
+/* Step 4.5: Using Custom Properties */
+/* This makes it so that commonly referred to and changeable details,
+    like the font weight or family, can be added and/or switched.
+*/
+:root {
+    --ff-main: "Poppins", sans-serif;
+    --fw-light: 200;
+    --fw-reg: 400;
+    --fw-bold: 600;
+
+    /* the given font-size here is 15px, but font-size should always be in rem
+        for the sake of accessibility. So, using 16px as the standard 1rem,
+        15px->15/16rem
+    */
+    --fs-reg: 0.9375rem;
+    /* These font-sizes are guestimated, TBC */
+    --fs-big: 1.325rem;
+    --fs-bigger: 1.625rem;
+    --fs-biggest: 2.5rem;
+
+    --clr-team: hsl(0, 78%, 62%);
+    --clr-superv: hsl(180, 62%, 55%);
+    --clr-karma: hsl(34, 97%, 64%);
+    --clr-calc: hsl(212, 86%, 64%);
+
+    --clr-neutral-mid: hsl(229, 6%, 66%);
+    --clr-neutral-light: hsl(0, 0%, 98%);
+    --clr-neutral-dark: hsl(234, 12%, 34%);
+}
+
+*,
+*::before,
+*::after
+{
+    box-sizing: border-box;
+}
+
+/* This part isn't necessary, since the images are so small, but it's good habit */
+/* img{
+    max-width: 100%;
+    display: block;
+} */
+
+/* Put font-related properies here
+    Because of units that rely on root declaration for font-size
+*/
+html{
+    font-family: var(--ff-main);
+    font-weight: var(--fw-reg);
+    /* guestimated, TBC */
+    line-height: 1.7;
+    color: var(--clr-neutral-mid);
+}
+/* Larger line-height is good for small font-sizes, so bigger ones need to have their own */
+h1,h2,h3{
+    color: var(--clr-neutral-dark);
+    line-height: 1.1;
+}
+
+/* Guestimated width, found by opening design image in Photos, setting to 100% size, and placing in a window under project */
+.wrapper{
+    max-width: 1175px;
+    margin-inline: auto;
+    /* adding border colors can help visualize where everything is. Just make sure to remove later */
+    /* border: 2px greenyellow solid; */
+}
+
+/* Don't need to put margin inline because it's already applied to the wrapper through the main wrapper class */
+.wrapper--centered{
+    max-width: 550px;
+    text-align: center;
+
+    border: 2px red solid;
+}
+/* putting the spacing on header to avoid possible height complications later */
+header{
+    /* margin-block is the opposite of margin-inline */
+    margin-block: 6rem 4rem;
+
+    border: 2px blue dashed;
+}
+
+
+
+/* making the bottom match the top */
+main{
+    /* not setting a margin-top since the gap is there from header */
+    margin-bottom: 6rem;
+}
+
+
+                /* GRID (FLEXBOX VER)*/
+/* for visualization, TBR */
+/* body{
+    border: 2px hotpink solid;
+}
+main{
+    border: 3px aqua solid;
+}
+.col{
+    border: 2px purple solid;
+}
+.card{
+    border: 2px solid darkorange;
+    background-color: rgb(255, 181, 181);
+}*/
+
+
+.grid{
+    /* custom property outside of the root are private, not public*/
+    --gap: 2rem;
+    display: flex;
+    gap: var(--gap);
+}
+/* To make each column equal, we apply the same width to each of them (flex: 1)
+    As all col are children of .grid, they can be called like this
+        Or you can just use .col
+*/
+/* flex: x = flex-basis: 0 + flex-grow: x*/
+    /* flex-basis: 0 tells the flex-item to collapse to it's smallest possible width */
+    /* flex-grow: x tells the flex-item to take up the remaining free-space, relative to the other flex-items by a factor of x */
+        /* Since all the .col have an equal factor of 1, they all grow to take up the same relative space; an equal amount of space */
+.grid > * {
+    flex: 1;
+}
+
+/* To space the cards vertically
+    making each col its own flexbox and centering vertically
+        ~~Using space-between maybe?~~
+        Using center, actually
+*/
+.col{
+    display: flex;
+    flex-direction: column;
+    /* gap can be called here because the custom property was inherited from .grid */
+    gap: var(--gap);
+    justify-content: center;
+}
+
+                            /* CARDS */
+.card{
+    /* making the brdr variable to set border radius and size equal */
+    --brdr:.25rem;
+
+    /* using padding since we want to push inside the border */
+    padding-inline: 2rem;
+    border-radius: var(--brdr);
+    /* box-shadow: (inset) | offset-x | offset-y | blur-radius | spread-radius | (color) */
+        /* offset changes the direction, spread-radius changes the size of the shadow, blur-radius changes how much blur there is*/
+            /* setting the spread-radius as negative means all we see are the blurry ends instead of the more solid start */
+        /* We want a shadow that is offset down and is pretty blurry*/
+    box-shadow: 0 1rem 1rem -.25rem hsl(213, 12%, 83%);
+}
+
+#supervisor{
+    /* to prevent the bowing at the ends of the border, the border size must be >= the border-radius */
+    border-top: var(--brdr) var(--clr-superv) solid;
+}
+#team{
+    border-top: var(--brdr) var(--clr-team) solid;
+}
+#karma{
+    border-top: var(--brdr) var(--clr-karma) solid;
+}
+#calculator{
+    border-top: var(--brdr) var(--clr-calc) solid;
+}
+
+.card__title{
+    font-size: var(--fs-big);
+}
+
+
+/* NOTES */
+/* - It's important to try and not unnecessarily repeat code.
+    Relying on cascading properties from inheritance is very useful for this.
+    For instance, you don't have to center the h1 and the p in the header individually, it can just be put on the parent wrapper and both'll be centered 
+*/
+/* - As can be seen with the .col border, while display:flex put the columns inline, it didn't give them equal widths like an actual grid would */

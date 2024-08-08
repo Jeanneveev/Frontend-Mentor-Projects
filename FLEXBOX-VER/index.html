@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
+
+		<link rel="stylesheet" href="my_style2.css" />
+		
+		<title>Frontend Mentor | Four card feature section</title>
+	</head>
+	<!-- PLAN -->
+	<!-- V1: 3 adjacent flexbox -->
+	<!-- V2: 3 column grid -->
+	<body>
+		<!-- Looking at the header, it's a centered box of a different size of the rest.
+			So, besides the scemantic <header>, there's a wrapper to apply that unique CSS
+		-->
+		<header>
+			<!-- BEM naming convention -->
+				<!-- Since it's specifically a wrapper for something centered, it's a modifier -->
+			<div class="wrapper wrapper--centered">
+				<!-- Both lines are in h1 because they're both main headers and there can only be 1 h1
+				-->
+				<h1>
+					Reliable, efficient delivery<br />
+					<!-- using <b> instead of <strong> because it's not of higher importance, it's just bolded -->
+					<b>Powered by Technology</b>
+				</h1>
+				<!-- It's <p> instead of <h2> because it's not a header, it's just larger than average text -->
+				<p>
+					Our Artificial Intelligence powered tools use millions of project data points
+					to ensure that your project is successful
+				</p>
+			</div>
+		</header>
+		
+		<main>
+			<div class="wrapper grid">
+				<div class="col">
+					<!-- 
+						A card is made up of a colored line, a h2, a p, blank space, then a right-aligned image
+							The line can be done with a top border
+							The h2 and p are just a styled h2 and p
+							The image can be a set size, the text can be a set size, and the space between can be auto sized
+					 -->
+					<div class="card" id="supervisor">
+						<h2 class="card__title">Supervisor</h2>
+						<p>Monitors activity to identify project roadblocks</p>
+						<img class="card__img" src="images/icon-supervisor.svg" alt="">
+					</div>
+				</div>
+				<div class="col">
+					<div class="card" id="team">
+						<h2 class="card__title">Team Builder</h2>
+						<p>Scans our talent network to create the optimal team for your project</p>
+						<img class="card__img" src="images/icon-team-builder.svg" alt="">
+					</div>
+					<div class="card" id="karma">
+						<h2 class="card__title">Karma</h2>
+						<p>Regularly evaluates our talent to ensure quality</p>
+						<img class="card__img" src="images/icon-karma.svg" alt="">
+					</div>
+				</div>
+				<div class="col">
+					<div class="card" id="calculator">
+						<h2 class="card__title">Calculator</h2>
+						<p>Uses data from past projects to provide better delivery estimates</p>
+						<img class="card__img" src="images/icon-calculator.svg" alt="">
+					</div>
+				</div>
+			</div>
+		</main>
+		
+		<footer>
+			<p class="attribution">
+			Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+			Coded by <a href="#">Your Name Here</a>.
+			</p>
+		</footer>
+	</body>
+</html>
+
+<!-- 1. Look at the design -->
+<!-- Plan ahead of time what you need to do and how you'll do it. -->
+	<!-- for instance, here, the cards are split into 3 columns,
+		 but how are the cards ordered within those columns? Does Karma
+		 come first or does Calculator?
+	-->
+<!-- Looking at the mobile view can help alliviate questions or give further insight. -->
+	<!-- it shows that Karma comes before Calculator -->
+		<!-- this makes an actual grid harder as you'd have to forcibly order
+			 Karma and Calculator, a fact that's better to know earlier than later
+		-->
+		<!-- Instead we can use 3 adjacent flexboxes -->
+
+<!-- 2. Make the HTML for the overall layout -->
+<!-- Make sure to use scemantic HTML and descriptive class and id names -->
+
+<!-- 3. Make the HTML for the smaller layout -->
+<!-- Look at the boxes you split things into in step 1 and split those into smaller boxes -->
+	<!-- Here, that means taking a single card and breaking down it's layout -->
+<!-- 4. Add the colors and fonts given in the design -->
+<!-- 5. Set the block-level widths based on the design -->
+<!-- 6/7. Either:
+		Focus making one modular piece then fitting it in the rest of the layout
+			OR
+		Focus on making the layout, then make a modular piece to fit in it
+-->
+
+<!-- TIPS -->
+<!-- Emmet Abbrev -->
+	<!-- Use *x to make x number of things -->
+		<!-- .col*3 makes 3 divs of class "col" -->
+
+<!-- VSCode Specific -->
+	<!-- Use ALT+Click to make a secondary cursor -->
+		<!-- This is good for repeated actions, like putting the card div in the col div -->
+	<!-- Select a tag and us CTRL+D to make a new cursor at the next appearance of that tag-->
+
+<!-- General Rules -->
+<!-- Don't skip heading sizes -->
+<!-- For an img, the alt attribute should always be included, but if it's just there for decaration purposes, the attribute can be left empty -->
