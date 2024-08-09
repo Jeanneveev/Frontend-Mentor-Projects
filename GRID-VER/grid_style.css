@@ -50,7 +50,6 @@ img{
 }
 
                             /* MOBILE */
-/* Common mobile size range by devs: 0-768px (- iEatWebsites) */
 body{
     max-width: 800px;
     margin-inline: auto;
@@ -125,4 +124,48 @@ h2{
     height: auto;
     width: auto;
     max-width: 50px;
+}
+
+
+                        /* DESKTOP */
+/* 
+    - narrow subheading
+    - put grid into grid
+    - maybe resize text
+*/
+/* Common mobile size range by devs: 0-768px (- iEatWebsites) */
+@media (min-width:769px) {
+    body{
+        padding-inline: .5rem;
+    }
+    .wrapper--centered{
+        max-width: 375px;
+        margin-inline: auto;
+        text-align: center;
+    }
+    h1{
+        font-size:1.625rem;
+    }
+    .desc{
+        font-size: .75rem;
+    }
+
+    .grid{
+        grid-template-areas: 
+            "..... team ....."
+            "super team calc"
+            "super karma calc"
+            "..... karma ...."
+        ;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #supervisor{grid-area: super;}
+    #team{grid-area: team;}
+    #karma{grid-area: karma;}
+    #calculator{grid-area: calc;}
+
+    .card__title{
+        margin-bottom: .25rem;
+    }
 }
