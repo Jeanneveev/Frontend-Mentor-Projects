@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    display: block;
+    max-width: 100%;
+}
+.attribution {
+    font-size: 11px; text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+.poppins-extralight {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+:root{
+    --clr-red: hsl(0, 78%, 62%);
+    --clr-cyan: hsl(180, 62%, 55%);
+    --clr-orange: hsl(34, 97%, 64%);
+    --clr-blue: hsl(212, 86%, 64%);
+    --clr-neutral-darkblue: hsl(234, 12%, 34%);
+    --clr-neutral-bluegray: hsl(229, 6%, 66%);
+    --clr-neutral-lgray: hsl(0, 0%, 98%);
+
+    --ff-main: "Poppins", sans-serif;
+    --fw-light: 200;
+    --fw-reg: 400;
+    --fw-bold: 600;
+    --fs-reg: .65rem;
+    --fs-cardtitle: .75rem;
+    --fs-subheading: .825rem;
+    --fs-heading: 1.4rem;
+}
+
+                            /* MOBILE */
+/* Common mobile size range by devs: 0-768px (- iEatWebsites) */
+body{
+    max-width: 800px;
+    margin-inline: auto;
+    padding-block: 4.5rem;
+    padding-inline: 3rem;
+
+    font-family: var(--ff-main);
+    font-weight: var(--fw-reg);
+    font-size: var(--fs-reg);
+    line-height: 1.75;
+    color: var(--clr-neutral-bluegray);
+
+    /* border: 2px hotpink solid; */
+}
+h1,h2{
+    line-height: 1.4;
+}
+
+header{
+    text-align: center;
+    margin-bottom: 4rem;
+
+    /* border: 2px blue solid; */
+}
+h1{
+    font-weight: var(--fw-light);
+    font-size: var(--fs-heading);
+
+    b{
+        font-weight: var(--fw-bold);
+        color: var(--clr-neutral-darkblue);
+    }
+
+    margin-bottom: 1rem;
+}
+.desc{
+    font-size: var(--fs-subheading);
+}
+
+h2{
+    color: var(--clr-neutral-darkblue);
+}
+
+                    /* GRID AND CARDS */
+.grid{
+    display: grid;
+    grid-auto-rows: 1fr;
+    gap: 1rem;
+
+    /* border: 2px lime solid; */
+}
+
+.card{
+    padding-block: 1.25rem;
+    padding-inline: 1.5rem;
+    border-radius: .325rem;
+
+    box-shadow: 0 .5rem 1.5rem -.5rem var(--clr-neutral-bluegray);
+
+    /* background-color: gray; */
+}
+
+#supervisor{border-top: .25rem var(--clr-cyan) solid;}
+#team{border-top: .25rem var(--clr-red) solid;}
+#karma{border-top: .25rem var(--clr-orange) solid;}
+#calculator{border-top: .25rem var(--clr-blue) solid;}
+
+.card__img{
+    margin-left: auto;
+    margin-top: 1.5rem;
+
+    height: auto;
+    width: auto;
+    max-width: 50px;
+}
