@@ -13,7 +13,6 @@ img{
 .attribution a {
     color: hsl(228, 45%, 44%);
 }
-
 .poppins-extralight {
     font-family: "Poppins", sans-serif;
     font-weight: 200;
@@ -29,7 +28,6 @@ img{
     font-weight: 600;
     font-style: normal;
 }
-
 :root{
     --clr-red: hsl(0, 78%, 62%);
     --clr-cyan: hsl(180, 62%, 55%);
@@ -45,16 +43,19 @@ img{
     --fw-bold: 600;
     --fs-reg: .65rem;
     --fs-cardtitle: .75rem;
-    --fs-subheading: .825rem;
-    --fs-heading: 1.4rem;
+    --fs-subheading: .7625rem;
+    --fs-heading: 1.25rem;
 }
+
 
                             /* MOBILE */
 body{
-    max-width: 800px;
-    margin-inline: auto;
-    padding-block: 4.5rem;
     padding-inline: 3rem;
+    padding-block: 3.85rem;
+}
+.wrapper{
+    max-width: 900px;
+    margin-inline: auto;
 
     font-family: var(--ff-main);
     font-weight: var(--fw-reg);
@@ -70,7 +71,7 @@ h1,h2{
 
 header{
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3.5rem;
 
     /* border: 2px blue solid; */
 }
@@ -97,7 +98,7 @@ h2{
 .grid{
     display: grid;
     grid-auto-rows: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
 
     /* border: 2px lime solid; */
 }
@@ -139,15 +140,16 @@ h2{
         padding-inline: .5rem;
     }
     .wrapper--centered{
-        max-width: 375px;
+        max-width: 400px;
         margin-inline: auto;
         text-align: center;
     }
-    h1{
-        font-size:1.625rem;
-    }
-    .desc{
-        font-size: .75rem;
+
+    h1{font-size: 1.75rem;}
+    .desc{font-size: .75rem;}
+
+    header{
+        margin-bottom: 3rem;
     }
 
     .grid{
@@ -160,12 +162,18 @@ h2{
         grid-template-rows: repeat(4, 1fr);
         grid-template-columns: repeat(3, 1fr);
     }
+    
     #supervisor{grid-area: super;}
     #team{grid-area: team;}
     #karma{grid-area: karma;}
     #calculator{grid-area: calc;}
 
     .card__title{
-        margin-bottom: .25rem;
+        margin-bottom: .5rem;
+
+        /* border: lightskyblue 2px solid; */
+    }
+    .card__text{
+        padding-bottom: 1rem;
     }
 }

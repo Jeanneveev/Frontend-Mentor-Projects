@@ -9,13 +9,13 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
 
-		<link rel="stylesheet" href="grid_style.css" />
+		<link rel="stylesheet" href="grid_style2.css" />
 		
 		<title>Frontend Mentor | Four Card Feature Section</title>
     </head>
     <body>
         <header>
-            <div class="wrapper--centered">
+            <div class="wrapper--centered wrapper">
                 <!--For mobile, the only wrapper is body-->
                 <h1>
                     Reliable, efficient delivery<br />
@@ -29,7 +29,7 @@
             </div>
         </header>
         <main>
-            <div class="grid">
+            <div class="grid wrapper">
                 <div class="card" id="supervisor">
                     <h2 class="card__title">Supervisor</h2>
                     <p class="card__text">
@@ -62,5 +62,20 @@
                 </div>
             </div>
         </main>
+        <footer>
+			<p class="attribution">
+			    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+			    Coded by <a href="#">Genevieve Jones</a>.
+			</p>
+		</footer>
     </body>
 </html>
+
+
+                        <!-- NOTES -->
+<!-- Originally tried using the body as the overall wrapper,
+    only to come across spacing issues where the bottom margin
+    would remain the same no matter how much it was changed,
+    so added wrapper class back
+-->
+<!-- I originally made the design correctly, but scaled down too small -->
