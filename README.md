@@ -16,7 +16,7 @@ This is a solution to the [Four card feature section challenge on Frontend Mento
 - [Acknowledgments](#acknowledgments)
 
 ## Overview
-This is my first real frontend project. The flexbox version was made by going through Kevin Powell's tutorial (https://www.youtube.com/watch?v=JFbxl_VmIx0&t=2184s), pausing at each section and doing it myself, before refining it following his advice. The grid version was made mostly on my own, with occasional references to my flexbox code and consulting MDN and Stack Overflow when I got stuck. I think I did pretty well on everything but the shadow color and the h1 font-size in mobile view.
+This is my first real frontend project. The flexbox version was made by going through [Kevin Powell's tutorial](https://www.youtube.com/watch?v=JFbxl_VmIx0&t=2184s), pausing at each section and doing it myself, before refining it following his advice. The grid version was made mostly on my own, with occasional references to my flexbox code and consulting MDN and Stack Overflow when I got stuck. I think I did pretty well on everything but the shadow color and the h1 font-size in mobile view.
 
 ### The challenge
 

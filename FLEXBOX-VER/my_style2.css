@@ -140,7 +140,7 @@ header p {
 /* making the bottom match the top */
 main{
     /* not setting a margin-top since the gap is there from header */
-    margin-bottom: 4rem;
+    margin-bottom: 1.5rem;
 }
 
 
@@ -235,6 +235,17 @@ main{
     height: auto;
     width: auto;
     max-width: 50px;
+}
+
+footer > p {
+    display: inline;
+}
+.attribution{
+    float: left;
+}
+#changePage{
+    font-size: 11px;
+    float: right;
 }
 
 /* MOBILE VIEW */
