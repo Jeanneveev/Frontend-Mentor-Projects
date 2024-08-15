@@ -117,7 +117,11 @@ body{
 .grid{
     display: grid;
     grid-template-columns: 1fr;
-    grid-auto-rows: 1fr;
+    /* this is 4 because there are 4 elements in each card,
+        (image, title, desc, btn)
+        which will later be their own rows of their own subgrid
+    */
+    grid-template-rows: repeat(4, auto);
 }
 
 .card:first-child{
@@ -127,12 +131,25 @@ body{
     border-radius: 0 0 .5rem .5rem;
 }
 
+/* since card is a direct child of grid, they become grid-items, and thus apart of the grid
+    but, the things inside each card aren't, so they don't, instead displaying their own way, thus being unaligned to each other
+    This is what the subgrid fixes
+*/
 .card{
     padding-inline:2.5rem;
     padding-block:2.25rem;
 
+    /* just setting display to grid does nothing,
+        as each card then becomes an independent grid.
+        grid-template-rows/columns: subgrid makes
+        the grid inherit from its parent, fixing this
+    */
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 4;
+
     .card__img{
-        height:auto;
+        height: auto;
         width: auto;
         max-width: 50px;
 
@@ -177,6 +194,7 @@ body{
     }
 
     .grid{
+        /* For extra: look back at calendar project for how to replace 3 with variable */
         grid-template-columns: repeat(3,1fr);
     }
     .card:first-child{
