@@ -1,0 +1,188 @@
+.attribution { font-size: 11px; text-align: center; color: black;}
+.attribution a { color: hsl(228, 45%, 44%); }
+
+.big-shoulders-display-text {
+  font-family: "Big Shoulders Display", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+.lexend-deca-text {
+  font-family: "Lexend Deca", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Button Reset */
+button {
+    background-color: transparent;
+    border-width: 0;
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    padding: 0;
+  }
+
+/* ### Primary
+
+Bright orange: hsl(31, 77%, 52%)
+Dark cyan: hsl(184, 100%, 22%)
+Very dark cyan: hsl(179, 100%, 13%)
+
+### Neutral
+
+Transparent white (paragraphs): hsla(0, 0%, 100%, 0.75)
+Very light gray (background, headings, buttons): hsl(0, 0%, 95%) */
+
+
+:root{
+    --clr-card-sedan: hsl(31, 77%, 52%);
+    --clr-card-suv: hsl(184, 100%, 22%);
+    --clr-card-lux: hsl(179, 100%, 13%);
+    --clr-neutral-clearwhite: hsla(0, 0%, 100%, 0.75);
+    --clr-neutral-lgray: hsl(0, 0%, 95%);
+
+    --ff-main: "Lexend Deca", system-ui;
+    --ff-headings: "Big Shoulders Display", sans-serif;
+    --fw-main: 400;
+    --fw-headings: 700;
+    --fs-reg: .9375rem;
+    --fs-mobilereg: .825rem;
+    --fs-headings: 2rem;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    display: block;
+    max-width: 100%;
+}
+
+                    /* TEXT AND COLORS */
+body{
+    padding-inline: 1.25rem;
+
+    background-color: var(--clr-neutral-lgray);
+
+    font-family: var(--ff-main);
+    font-weight: var(--fw-main);
+    font-size: var(--fs-mobilereg);
+    line-height: 1.7;
+    color: var(--clr-neutral-clearwhite);
+}
+.card__heading{
+    font-family: var(--ff-headings);
+    font-weight: var(--fw-headings);
+    font-size: var(--fs-headings);
+    color: var(--clr-neutral-lgray);
+    line-height: 1;
+    text-transform: uppercase;
+}
+#sedan{
+    background-color: var(--clr-card-sedan);
+
+    button{
+        color: var(--clr-card-sedan);
+    }
+}
+#suv{
+    background-color: var(--clr-card-suv);
+
+    button{
+        color: var(--clr-card-suv);
+    }
+}
+#luxury{
+    background-color: var(--clr-card-lux);
+
+    button{
+        color: var(--clr-card-lux);
+    }
+}
+.card__btn{
+    background-color: var(--clr-neutral-lgray);
+}
+
+.wrapper{
+    margin-block: 4.25rem;   
+}
+
+                            /* CARDS */
+.grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
+}
+
+.card:first-child{
+    border-radius: .5rem .5rem 0 0;
+}
+.card:last-child{
+    border-radius: 0 0 .5rem .5rem;
+}
+
+.card{
+    padding-inline:2.5rem;
+    padding-block:2.25rem;
+
+    .card__img{
+        height:auto;
+        width: auto;
+        max-width: 50px;
+
+        margin-bottom: 2rem;
+    }
+    .card__heading{
+        margin-bottom: 1.5rem;
+    }
+    .card__desc{
+        margin-bottom: 1rem;
+    }
+    .card__btn{
+        border-radius: 2rem;
+        padding-block: .5rem;
+        padding-inline: 1.5rem;
+    }
+}
+                        /* BUTTONS: CLICKED */
+.card__btn:active{
+    box-shadow: inset 0 0 0 .125rem var(--clr-neutral-lgray);
+    /* box-shadow: inset 0 0 0 .125rem blue; */
+}
+#sedan > .card__btn:active{
+    background-color: var(--clr-card-sedan);
+    color: var(--clr-neutral-lgray);
+}
+#suv > .card__btn:active{
+    background-color: var(--clr-card-suv);
+    color: var(--clr-neutral-lgray);
+}
+#luxury > .card__btn:active{
+    background-color: var(--clr-card-lux);
+    color: var(--clr-neutral-lgray);
+}
+
+
+                        /* DESKTOP VER */
+@media (min-width:769px) {
+    body{
+        font-size: var(15px);
+            padding-inline: 13rem;
+    }
+
+    .grid{
+        grid-template-columns: repeat(3,1fr);
+    }
+    .card:first-child{
+        border-radius: .5rem 0 0 .5rem;
+    }
+    .card:last-child{
+        border-radius: 0 .5rem .5rem 0;
+    }
+}
