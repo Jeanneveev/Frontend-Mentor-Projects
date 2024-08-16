@@ -188,7 +188,7 @@ body{
 
 
                         /* DESKTOP VER */
-@media (min-width:769px) {
+@media (min-width:780px) {
     body{
         height: 100vh;
         display: grid;
