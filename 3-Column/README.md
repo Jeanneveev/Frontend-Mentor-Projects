@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [http://127.0.0.1:5500/3-Column/index.html](http://127.0.0.1:5500/3-Column/index.html)
+- Solution URL: [https://www.frontendmentor.io/solutions/responsive-landing-page-using-css-grid-DSGRC-poKB](https://www.frontendmentor.io/solutions/responsive-landing-page-using-css-grid-DSGRC-poKB)
+- Live Site URL: [https://jeanneveev.github.io/Frontend-Mentor-Projects/3-Column/](https://jeanneveev.github.io/Frontend-Mentor-Projects/3-Column/)
 
 ## My process
 
@@ -40,64 +40,38 @@ Users should be able to:
 
 - Semantic HTML5 markup
 - CSS custom properties
-- Flexbox
 - CSS Grid
+- CSS Subgrid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-
-
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+I learned that Windows has a setting called "Make everything bigger" which does just that, causing all text to look larger than it should be, and forcing me to rewrite much of the CSS when I realized it. Also, I learned to check the line height early on, as I had initially geustimated it to be 1.7, only to realize it was 1.5 later on, which also affected the padding of the other parts of each card.
+I learned, or rather realized, that setting your design to center immediately isn't always the best idea, as any changes to the internal elements of a container will shift the position of that container as well, making it hard to judge how much to adjust the offset or if you got it right.
+I also learned more about box-shadows, which was a goal from my last project. For the active state of the buttons, I realized that the buttons didn't change size when pressed, so there had to be some sort of internal border around it. I first thought of having a border always on while just changing the backround and text color, but that threw my sizings off, so I did some searching and found Shukhrat Raimov's answer to a similar question on Stack Overflow [here](https://stackoverflow.com/questions/9601357/placing-border-inside-of-div-and-not-on-its-edge). This led to the code snippet below, which I am very proud of.
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.card__btn:active{
+    box-shadow: inset 0 0 0 .125rem var(--clr-neutral-lgray);
 }
 ```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+Lastly, I learned not to use ids to change CSS, on advice of Darkstar from the Frontend Mentor Discord. 
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I want to refine my knowledge about grids and subgrids going forward. Also, I need to learn more about git branches and histories as I had some trouble merging my dev branch to the main branch at the end.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [ModernCSS.dev's Guide to Centering](https://moderncss.dev/complete-guide-to-centering-in-css/) - This helped me figure out how to center my wrapper in a more efficient way.
+- [Slaying the Dragon's Subgrid Tutorial](https://www.youtube.com/watch?v=Yl8hg2FG20Q&t=490s) - This is an amazing video that helped me with my exact problem trying to space the buttons to be inline at different screen sizes.
+- [Inner Border Solution](https://stackoverflow.com/questions/9601357/placing-border-inside-of-div-and-not-on-its-edge) - The answers to this question helped a lot when making the active states of my buttons, especially Shukrat Raimov's answer on using box-shadows.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- GitHub - [Jeanneveev](https://github.com/Jeanneveev)
+- Frontend Mentor - [@Jeanneveev](https://www.frontendmentor.io/profile/Jeanneveev)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+I want to thank the Frontend Mentor Discord which helped me with my text size problem, a fact that, if went unchecked, would have surely messed up all my later projects.
