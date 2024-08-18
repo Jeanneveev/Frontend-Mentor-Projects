@@ -6,20 +6,22 @@
 
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="og-style.css" />
-    
-    <title>Frontend Mentor | 3-column preview card component</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+
+    <title>Frontend Mentor | Expanded Column Preview Card Component</title>
 </head>
 
 <!-- EXTRA:
-        Have a selector of car types that add different types of cars to the grid, mobile expanding and desktop becoming a roulette
+        - Move selected car to far left on click
+            - Carousel? Carousel but on-click item instead of arrow?
 -->
 <body>
-    <main>
+    <main class="centered">
         <div class="grid wrapper">
-            <div class="card card--sedan">
+            <div class="card card--sedan" id="sedan">
                 <img class="card__img" src="images/icon-sedans.svg" alt="graphic of a suv"/>
                 <!-- There's no h1, so this is a p -->
                 <p class="card__heading">Sedans</p>
@@ -28,10 +30,10 @@
                     excellent fuel economy. Ideal for cruising in
                     the city or on your next road trip.
                 </p>
-                <button class="card__btn">Learn More</button>
+                <button class="card__btn" id="sedan_btn" onclick="selectCard(this.id)">Learn More</button>
             </div>
         
-            <div class="card card--suv">
+            <div class="card card--suv" id="suv">
                 <img class="card__img" src="images/icon-suvs.svg" alt="graphic of a luxury car"/>
                 <p class="card__heading">SUVs</p>
                 <p class="card__desc">
@@ -39,10 +41,10 @@
                     and versatility. Perfect for your next family
                     vacation and off-road adventures.
                 </p>
-                <button class="card__btn">Learn More</button>
+                <button class="card__btn" id="suv_btn" onclick="selectCard(this.id)">Learn More</button>
             </div>
         
-            <div class="card card--luxury">
+            <div class="card card--luxury" id="lux">
                 <img class="card__img" src="images/icon-luxury.svg" alt="graphic of a sedan"/>
                 <p class="card__heading">Luxury</p>
                 <p class="card__desc">
@@ -50,12 +52,12 @@
                     bloated prices. Enjoy the enhanced comfort
                     of a luxury rental and arrive in style.
                 </p>
-                <button class="card__btn">Learn More</button>
+                <button class="card__btn" id="lux_btn" onclick="selectCard(this.id)">Learn More</button>
             </div>
         </div>
     </main>
     
-    <footer>
+    <footer class="centered">
         <div class="attribution">
             Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
             Coded by <a href="#">Genevieve Jones</a>.
